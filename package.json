@@ -3,6 +3,8 @@
     "crypto-js": "^4.1.1",
     "crytpo-js": "^0.0.1-security",
     "elliptic": "^6.5.4",
-    "jsrsasign": "^10.8.6"
+    "jsrsasign": "^10.8.6",
+    "solc": "^0.8.20",
+    "web3": "^4.0.1"
   }
 }

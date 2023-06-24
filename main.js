@@ -8,7 +8,7 @@ const myWalletAddress = myKey.getPublic('hex');
 
 let artCoin = new Blockchain();
 
-const transaction1 = new Transaction(myWalletAddress, 'public key', 10);
+const transaction1 = new Transaction(myWalletAddress, 'public key', 10,0);
 transaction1.signTransaction(myKey);
 artCoin.addTransaction(transaction1);
 
@@ -46,6 +46,10 @@ console.log('Is chain valid?', artCoin.isChainValid());
 
 //console.log(JSON.stringify(artCoin,null, 4));
 
+
+
+//ArtworkOwnership artworkContract = new ArtworkOwnership();
+//artworkContract.createArtwork("Sanat Eseri");
 
 //Each represents a work of art and has the attributes creator, creation_date, and owners. 
 class Artwork {
