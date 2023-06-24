@@ -25,6 +25,12 @@ class Blockchain{
     getLatestBlock(){
         return this.chain(this.chain.length - 1);
     }
+
+    addBlock(newBlock){
+        newBlock.previousHash = this.getLatestBlock().hash;
+        newBlock.hash = newBlock.calculateHash();
+        this.chain.push(newBlock);
+    }
 }
 
 //Each represents a work of art and has the attributes creator, creation_date, and owners. 
