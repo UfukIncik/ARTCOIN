@@ -34,7 +34,7 @@ class Blockchain{
         this.chain.push(newBlock);
     }
 
-    isChainVlaid(){
+    isChainValid(){
         for(let i = 1; i < this.chain.length; i++){
             const currentBlock = this.chain[i];
             const previousBlock = this.chain[i-1];
@@ -56,7 +56,13 @@ let nitroCoin = new Blockchain();
 nitroCoin.addBlock(new Block(1, "15/01/2023", {amount: 4}));
 nitroCoin.addBlock(new Block(2, "20/01/2023", {amount: 10}));
 
-console.log("Is blockchain valid? " + nitroCoin.isChainVlaid());
+console.log("Is blockchain valid? " + nitroCoin.isChainValid());
+
+nitroCoin.chain[1].data = {amount: 100 };
+nitroCoin.chain[1].hash = nitroCoin.chain[1].calculateHash();
+
+console.log("Is blockchain valid? " + nitroCoin.isChainValid());
+
 
 //console.log(JSON.stringify(nitroCoin,null, 4));
 
