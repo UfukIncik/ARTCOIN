@@ -13,6 +13,16 @@ class Block{
     }
 }
 
+class Blockchain{
+    constructor(){
+        this.chain = [];
+    }
+
+    createGenesisBlock(){
+        
+    }
+}
+
 //Each represents a work of art and has the attributes creator, creation_date, and owners. 
 class Artwork {
     constructor(creator, creation_date, owners) {
