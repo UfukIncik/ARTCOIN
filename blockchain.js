@@ -7,11 +7,12 @@ class Transaction{
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
         this.amount = amount;
+        this.productID = productID;  // Unique identifier for luxury product or artwork
 
     }
 
     calculateHash(){
-        return SHA256(this.fromAddress + this.toAddress + this.amount).toString();
+        return SHA256(this.fromAddress + this.toAddress + this.amount + this.productID).toString();
     }
     
     signTransaction(signingKey){
