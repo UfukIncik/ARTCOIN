@@ -23,7 +23,7 @@ class Blockchain{
     }
 
     getLatestBlock(){
-        return this.chain(this.chain.length - 1);
+        return this.chain[this.chain.length - 1];
     }
 
     addBlock(newBlock){
@@ -32,6 +32,12 @@ class Blockchain{
         this.chain.push(newBlock);
     }
 }
+
+let nitroCoin = new Blockchain();
+nitroCoin.addBlock(new Block(1, "15/ 01/2023", {amount: 4}));
+nitroCoin.addBlock(new Block(2, "20/01/2023", {amount: 10}));
+
+console.log(JSON.stringify(nitroCoin,null, 4));
 
 //Each represents a work of art and has the attributes creator, creation_date, and owners. 
 class Artwork {
