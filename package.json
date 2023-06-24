@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "crypto-js": "^4.1.1",
+    "crytpo-js": "^0.0.1-security",
+    "jsrsasign": "^10.8.6"
+  }
+}

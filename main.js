@@ -33,13 +33,32 @@ class Blockchain{
         newBlock.hash = newBlock.calculateHash();
         this.chain.push(newBlock);
     }
+
+    isChainVlaid(){
+        for(let i = 1; i < this.chain.length; i++){
+            const currentBlock = this.chain[i];
+            const previousBlock = this.chain[i-1];
+
+            if(currentBlock.hash !== currentBlock.calculateHash()){
+                return false;
+            }
+
+            if(currentBlock.previousHash !== previousBlock.hash){
+                return false;
+            }
+        }
+
+        return true;
+    }
 }
 
 let nitroCoin = new Blockchain();
-nitroCoin.addBlock(new Block(1, "15/ 01/2023", {amount: 4}));
+nitroCoin.addBlock(new Block(1, "15/01/2023", {amount: 4}));
 nitroCoin.addBlock(new Block(2, "20/01/2023", {amount: 10}));
 
-console.log(JSON.stringify(nitroCoin,null, 4));
+console.log("Is blockchain valid? " + nitroCoin.isChainVlaid());
+
+//console.log(JSON.stringify(nitroCoin,null, 4));
 
 //Each represents a work of art and has the attributes creator, creation_date, and owners. 
 class Artwork {
