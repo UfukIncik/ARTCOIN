@@ -6,45 +6,45 @@ const myKey = ec.keyFromPrivate('45d4804f6515628423ac6e0da145c7da24191e62fbd8aac
 const myWalletAddress = myKey.getPublic('hex');
 
 
-let nitroCoin = new Blockchain();
+let artCoin = new Blockchain();
 
 const transaction1 = new Transaction(myWalletAddress, 'public key', 10);
 transaction1.signTransaction(myKey);
-nitroCoin.addTransaction(transaction1);
+artCoin.addTransaction(transaction1);
 
-// nitroCoin.createTransaction(new Transaction('address1', 'address2 ', 100));
-// nitroCoin.createTransaction(new Transaction('address2', 'address1 ', 50));
+// artCoin.createTransaction(new Transaction('address1', 'address2 ', 100));
+// artCoin.createTransaction(new Transaction('address2', 'address1 ', 50));
 
 console.log('\n Starting the miner..');
-nitroCoin.minePendingTransactions(myWalletAddress);
+artCoin.minePendingTransactions(myWalletAddress);
 
-console.log('\nBalance of aybars is', nitroCoin.getBalanceOfAddress(myWalletAddress));
+console.log('\nBalance of aybars is', artCoin.getBalanceOfAddress(myWalletAddress));
 
-nitroCoin.chain[1].transactions[0].amount = 1;
+artCoin.chain[1].transactions[0].amount = 1;
 
-console.log('Is chain valid?', nitroCoin.isChainValid());
+console.log('Is chain valid?', artCoin.isChainValid());
 
 // console.log('\n Starting the miner again..');
-// nitroCoin.minePendingTransactions('aybars-address');
+// artCoin.minePendingTransactions('aybars-address');
 
-// console.log('\nBalance of aybars is', nitroCoin.getBalanceOfAddress('aybars-address'));
+// console.log('\nBalance of aybars is', artCoin.getBalanceOfAddress('aybars-address'));
 
 
 //console.log("Mining block 1...");
-//nitroCoin.addBlock(new Block(1, "15/01/2023", {amount: 4}));
+//artCoin.addBlock(new Block(1, "15/01/2023", {amount: 4}));
 
 //console.log("Mining block 2...");
-//nitroCoin.addBlock(new Block(2, "20/01/2023", {amount: 8}));
+//artCoin.addBlock(new Block(2, "20/01/2023", {amount: 8}));
 
-//console.log("Is blockchain valid? " + nitroCoin.isChainValid());
+//console.log("Is blockchain valid? " + artCoin.isChainValid());
 
-//nitroCoin.chain[1].data = {amount: 100 };
-//nitroCoin.chain[1].hash = nitroCoin.chain[1].calculateHash();
+//artCoin.chain[1].data = {amount: 100 };
+//artCoin.chain[1].hash = artCoin.chain[1].calculateHash();
 
-//console.log("Is blockchain valid? " + nitroCoin.isChainValid());
+//console.log("Is blockchain valid? " + artCoin.isChainValid());
 
 
-//console.log(JSON.stringify(nitroCoin,null, 4));
+//console.log(JSON.stringify(artCoin,null, 4));
 
 
 //Each represents a work of art and has the attributes creator, creation_date, and owners. 
