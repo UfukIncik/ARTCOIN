@@ -5,7 +5,7 @@ contract ArtworkOwnership {
     struct Artwork {
         string name;
         address payable owner;
-        uint productId; // Eserin productId'si
+        uint productId; // id of the valuables
     }
 
     Artwork[] public artworks;

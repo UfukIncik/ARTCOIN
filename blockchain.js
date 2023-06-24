@@ -16,15 +16,16 @@ class Transaction{
     }
     
     signTransaction(signingKey){
+        // Check if the signing key corresponds to the wallet's public key
         if(signingKey.getPublic('hex') !== this.fromAddress){
-            throw new Error('You cant sign transactions for other wallets');
+            throw new Error("You can't sign transactions for other wallets");
 
         }
 
-
-        const hashTx = this.calculateHash();
-        const sig= signingKey.sign(hashTx, 'base64');
-        this.signature = sig.toDER('hex');
+        
+        const hashTx = this.calculateHash(); // Calculate the hash of the transaction
+        const sig= signingKey.sign(hashTx, 'base64'); // Sign the hash using the signing key
+        this.signature = sig.toDER('hex');    // Convert the signature to a hex-encoded string
 
     }
 
@@ -82,7 +83,7 @@ class Blockchain{
     }
 
     createGenesisBlock(){
-        return new Block("01/01/2023","Genesis Block","0");
+        return new Block("01/01/2023","Genesis Block","0"); // first block of the blokchain
     }
 
     getLatestBlock(){
@@ -108,7 +109,7 @@ class Blockchain{
         }
 
         if (!transaction.isValid()) {
-            throw new Error('Cannot add invalid transaction to chain');
+            throw new Error('Cannot add invalid transaction to blokchain');
         }
 
         this.pendingTransactions.push(transaction);

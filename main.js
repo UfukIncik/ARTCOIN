@@ -1,5 +1,5 @@
 const {Blockchain,Transaction} = require('./blockchain');
-const EC = require('elliptic').ec;
+const EC = require('elliptic').ec; //Elliptic is a secure and efficient public-key cryptography method based on the mathematics of elliptic curves, 
 const ec = new EC('secp256k1');
 
 const myKey = ec.keyFromPrivate('45d4804f6515628423ac6e0da145c7da24191e62fbd8aac38be6fd640f6ad2c0');
