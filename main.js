@@ -10,7 +10,7 @@ nitroCoin.minePendingTransactions('aybars-address');
 
 console.log('\nBalance of aybars is', nitroCoin.getBalanceOfAddress('aybars-address'));
 
-console.log('\n Starting the miner agaşin..');
+console.log('\n Starting the miner again..');
 nitroCoin.minePendingTransactions('aybars-address');
 
 console.log('\nBalance of aybars is', nitroCoin.getBalanceOfAddress('aybars-address'));
